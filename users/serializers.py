@@ -14,7 +14,7 @@ class SignUpSerializer(serializers.ModelSerializer):
         fields = ["email", "username", "password"]
 
     def validate(self, attrs):
-
+        ''' Valida correo en base de datos , Devuelve un resultado'''
         email_exists = User.objects.filter(email=attrs["email"]).exists()
         if email_exists:
             raise ValidationError("El email ya ha sido usado")
