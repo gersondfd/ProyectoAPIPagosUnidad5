@@ -21,6 +21,7 @@ class SignUpSerializer(serializers.ModelSerializer):
         return super().validate(attrs)
 
     def create(self, validated_data):
+        '''crea una nueva instancia , devuelve un usuario '''
         password = validated_data.pop("password")
         user = super().create(validated_data)
         user.set_password(password)

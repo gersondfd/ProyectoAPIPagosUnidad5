@@ -14,6 +14,7 @@ from django.shortcuts import redirect
 
 
 class SignUpView(generics.GenericAPIView):
+    ''''''
     serializer_class = SignUpSerializer
 
     def post(self, request: Request):
